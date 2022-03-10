@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160625062916) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -32,8 +29,8 @@ ActiveRecord::Schema.define(version: 20160625062916) do
     t.datetime "updated_at",        null: false
   end
 
-  add_index "line_items", ["order_id"], name: "index_line_items_on_order_id", using: :btree
-  add_index "line_items", ["product_id"], name: "index_line_items_on_product_id", using: :btree
+  add_index "line_items", ["order_id"], name: "index_line_items_on_order_id"
+  add_index "line_items", ["product_id"], name: "index_line_items_on_product_id"
 
   create_table "orders", force: :cascade do |t|
     t.integer  "total_cents"
@@ -54,9 +51,6 @@ ActiveRecord::Schema.define(version: 20160625062916) do
     t.integer  "category_id"
   end
 
-  add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
+  add_index "products", ["category_id"], name: "index_products_on_category_id"
 
-  add_foreign_key "line_items", "orders"
-  add_foreign_key "line_items", "products"
-  add_foreign_key "products", "categories"
 end
