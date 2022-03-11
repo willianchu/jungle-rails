@@ -1,0 +1,19 @@
+<tr>
+  <td>
+    <%= image_tag product.image.inspect %>
+  </td>
+  <td>
+    <h4><%= product.name.inspect %></h4>
+    <br>
+    <p><%= product.description.inspect %></p>
+  </td>
+  <td>
+    <%= humanized_money_with_symbol product.price.inspect %>
+  </td>
+  <td>
+    <%= quantity %>
+  </td>
+  <td>
+    <%= humanized_money_with_symbol product.price * quantity %>
+  </td>
+</tr>
