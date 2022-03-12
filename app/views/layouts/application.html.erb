@@ -11,6 +11,12 @@
   <%= render 'layouts/top_nav' %>
 
   <main class="container">
+    <% if active_sale? %>
+      <p class="alert alert-info">
+        There's an active <%= active_sale_name %> sale going on!
+        Everything is <strong><%= active_sale_discount %>% off!</strong>
+      </p>
+    <% end %>
     <%= yield %>
   </main>
 

@@ -3,8 +3,7 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @product = []
-    @order.line_items.each {|line|
-     @product.push(Product.find(line[:product_id]))}
+    @order.line_items.each {|line| @product.push(Product.find(line[:product_id]))}
     @product
     @order.line_items
   end
