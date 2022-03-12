@@ -17,6 +17,11 @@ Rails.application.routes.draw do
     resources :products, except: [:edit, :update, :show]
   end
 
+  # login and new user
+  get '/signup', to: 'users#new'
+  post '/users', to: 'users#create'	
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
