@@ -7,9 +7,7 @@ module SalesHelper
     Sale.active_sale_name
   end
 
-  def active_sale_discount
-    Sale.active_sale_discount
+  def active_sale_percent_off
+    Sale.active_percent_off
   end
-
-
 end

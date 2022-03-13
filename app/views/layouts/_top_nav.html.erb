@@ -37,6 +37,12 @@
             <%= link_to "Logout", '/logout' %>
           <% end %>
         </li>
+       
+          <% if !current_user %>
+            <li><%= link_to 'Login', '/login' %></li>
+            <li><%= link_to 'Signup', '/signup' %></li>
+          <% end %>
+        
        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 
@@ -46,6 +52,7 @@
           <ul class="dropdown-menu">
             <li><%= link_to 'Dashboard', [:admin, :root] %></li>
             <li><%= link_to 'Products',  [:admin, :products] %></li>
+            <li><%= link_to 'Sales',  [:admin, :sales] %></li>
           </ul>
         </li>
         <li>
