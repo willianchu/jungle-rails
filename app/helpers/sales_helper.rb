@@ -8,6 +8,6 @@ module SalesHelper
   end
 
   def active_sale_percent_off
-    Sale.active_percent_off
+    Sale.active_sale_percent_off
   end
 end

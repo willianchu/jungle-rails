@@ -6,11 +6,11 @@ class Sale < ActiveRecord::Base
       where("sales.starts_on <= ? AND sales.ends_on >= ?", Date.current, Date.current)
     end
       
-    def self.active_name
+    def self.active_sale_name
       Sale.where("sales.starts_on <= ? AND sales.ends_on >= ?", Date.current, Date.current).first.name
     end
     
-    def self.active_percent_off
+    def self.active_sale_percent_off
       Sale.where("sales.starts_on <= ? AND sales.ends_on >= ?", Date.current, Date.current).first.percent_off
     end
       
