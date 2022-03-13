@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     resources :sales, only: [:index, :new]
   end
 
+  resources :about, only: [:index]
+
   # login and new user
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
