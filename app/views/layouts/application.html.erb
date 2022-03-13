@@ -11,6 +11,9 @@
   <%= render 'layouts/top_nav' %>
 
   <main class="container">
+    <% if !current_user %>
+      <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+    <% end %>
     <% if active_sale? %>
       <p class="alert alert-info">
         There's an active <%= active_sale_name %> sale going on!
