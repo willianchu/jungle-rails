@@ -8,8 +8,17 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def current_user_admin
+    current_user == User.find_by(name: ENV['username']) && current_user.authenticate(ENV['password'])
+  end
+  helper_method :current_user_admin
+
   def authorize
     redirect_to '/login' unless current_user
+  end
+
+  def authorize_adm
+    redirect_to '/login' unless current_user_admin  
   end
 
   private

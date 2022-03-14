@@ -1,2 +1,11 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h1>Admin &raquo; Dashboard</h1>
+<div class="container" id="container_div">
+  <div class="row v-align" id="outer_div">
+    <div class="bg-success  col-xs-4" id="total_products">
+      <h2><%= link_to 'Total of products: ', [:admin, :products] %><%=@total_products%></h2>
+    </div>
+    <div class="bg-warning col-xs-4" id="total_categories">
+      <h2><%= link_to 'Total of Categories: ', [:admin, :categories] %><%=@total_categories%></h2>
+    </div>
+   </div>
+</div>
