@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature "ProductDetails", type: :feature, js: true do #You will need to use the javascript-enabled browser by specifying js: true in the feature declaration
-  
+RSpec.feature "AddToCarts", type: :feature, js: true do #feature block
+
     # SETUP
 
     before :each do
@@ -18,18 +18,19 @@ RSpec.feature "ProductDetails", type: :feature, js: true do #You will need to us
       end
     end
 
-  #describe block
+     #describe block
 
 
-  scenario "They choose one especific product to see" do #scenario Block
+  scenario "They will add products to cart" do #scenario Block
     # ACT
     visit root_path
-        
-    find_link('Details', match: :first).click
     
-    
+    find('button', text: 'Add', match: :first).click
+    cart_tag = find(:css, "a[href='/cart']")
+    expect(cart_tag).to have_text("My Cart (1)")
     sleep 5
     # DEBUG / VERIFY
+    
   save_screenshot
     
     
