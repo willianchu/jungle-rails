@@ -39,17 +39,14 @@ RSpec.describe User, type: :model do
 
   describe 'edge cases' do
     it "will authenticate user with blank spaces before and after a valid email and password" do
-    user_auth = User.create(name: "Sleepy Person", email: "zzz@spleep.com", password: "zzzz1234", password_confirmation: "zzzz1234")
-    expect(User.authenticate_with_credentials("  zzz@spleep.com  ", user_auth.password)).to eq(user_auth)
+      user_auth = User.create(name: "Sleepy Person", email: "zzz@spleep.com", password: "zzzz1234", password_confirmation: "zzzz1234")
+      expect(User.authenticate_with_credentials("  zzz@spleep.com  ", user_auth.password)).to eq(user_auth)
     end
 
     it "will authenticate user with uppercase and lower case email" do
       user_camel = User.create(name: "CaMeL PeRSoN", email: "eXample@domain.COM", password: "camel1234", password_confirmation: "camel1234")
-      puts "RESPECT >>>"
-      puts user_camel.email.strip.downcase
-      puts user_camel.email
       expect(User.authenticate_with_credentials("EXAMPLe@DOMAIN.CoM", user_camel.password)).to eq(user_camel)
-      end
+    end
   end
 
 

@@ -2,8 +2,6 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  before_save { self.email = email.downcase }
-
   validates :password, length: { minimum: 8 }
 
   validates_uniqueness_of :email, :case_sensitive => false
@@ -14,13 +12,7 @@ class User < ActiveRecord::Base
     
     normalized_email = email.downcase.strip
 
-    puts "USER MODULE>>>"
-    puts normalized_email
-
-    user = User.find_by_email(normalized_email)
-
-    puts "FIND USER>>>"
-    puts user.inspect
+    user = User.find {|el| el.email.downcase == normalized_email}
 
     if user && user.authenticate(password)
       user
