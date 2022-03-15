@@ -24,6 +24,14 @@ RSpec.feature "AddToCarts", type: :feature, js: true do #feature block
   scenario "They will add products to cart" do #scenario Block
     # ACT
     visit root_path
+    #make a Signup/login
+    find_link('Signup').click
+    fill_in 'user[name]',  with: "Robot User"
+    fill_in 'user[email]',  with: "us@robotics.com"
+    fill_in 'user[password]',  with: "supersecret"
+    fill_in 'user[password_confirmation]',  with: "supersecret"
+    click_on "Submit"
+    sleep 5
     
     find('button', text: 'Add', match: :first).click
     cart_tag = find(:css, "a[href='/cart']")

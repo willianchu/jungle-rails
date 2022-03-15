@@ -24,6 +24,14 @@ RSpec.feature "ProductDetails", type: :feature, js: true do #You will need to us
   scenario "They choose one especific product to see" do #scenario Block
     # ACT
     visit root_path
+    #make a Signup/login
+    find_link('Signup').click
+    fill_in 'user[name]',  with: "Robot User"
+    fill_in 'user[email]',  with: "us@robotics.com"
+    fill_in 'user[password]',  with: "supersecret"
+    fill_in 'user[password_confirmation]',  with: "supersecret"
+    click_on "Submit"
+    sleep 5
         
     find_link('Details', match: :first).click
     
