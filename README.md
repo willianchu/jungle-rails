@@ -1,6 +1,6 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2.6 for purposes of teaching Rails by example.
 
 ## Additional Steps for Apple M1 Machines
 
@@ -28,6 +28,17 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Dependencies
 
-* Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
-* PostgreSQL 9.x
-* Stripe
+Jungle has actually several dependencies of open source projects to work properly.
+Instructions on how to use them in your own application are linked below.
+
+| Dependecies | README |
+| ------ | ------ |
+| Ruby 2.3.5| [https://www.ruby-lang.org/en/downloads/] |
+| Rails 4.2.6| [https://rubygems.org/gems/rails] |
+| pg | [https://rubygems.org/gems/pg] |
+| PostgreSQL 9 | [https://www.postgresql.org/] |
+| puma | [https://rubygems.org/gems/puma/] |
+
+
+Scheduler is open source itself too! with a [https://github.com/willianchu/jungle-rails][willianchu]
+ on GitHub.
