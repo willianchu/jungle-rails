@@ -2,6 +2,18 @@
 
 A mini e-commerce application built with Rails 4.2.6 for purposes of teaching Rails by example.
 
+Mainpage
+!["Main Page"](https://github.com/willianchu/jungle-rails/blob/master/docs/mainpage.jpg)
+
+Checkout
+!["Checkout"](https://github.com/willianchu/jungle-rails/blob/master/docs/checkout.jpg)
+
+Order  Stripe
+!["Stripes"](https://github.com/willianchu/jungle-rails/blob/master/docs/checkoutstripe.jpg)
+
+Secret Area (only with the Admin credencials)
+!["Stripes"](https://github.com/willianchu/jungle-rails/blob/master/docs/secretarea.jpg)
+
 ## Additional Steps for Apple M1 Machines
 
 1. Make sure that you are runnning Ruby 2.6.6 (`ruby -v`)
